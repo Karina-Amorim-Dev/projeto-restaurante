@@ -9,7 +9,7 @@
 ## 🎨 Tela do Aplicativo
 
 <div align="center">
-  <img src="https://imgur.com/placeholder.png" alt="Tela Principal - Projeto Restaurante" width="300" />
+  <img src="./img/screenshot-app.png" alt="Tela Principal - Projeto Restaurante" width="300" />
   
   **Tela Principal com Contador de Ocupação**
 </div>
@@ -70,7 +70,10 @@ projeto-restaurante/
 │   └── proguard-rules.pro                 # Regras de otimização
 ├── build.gradle.kts                       # Build do projeto raiz
 ├── settings.gradle.kts                    # Configuração de módulos
-└── gradle.properties                      # Propriedades Gradle
+├── gradle.properties                      # Propriedades Gradle
+├── img/                                   # Pasta com imagens da documentação
+│   └── screenshot-app.png                 # Screenshot da tela do app
+└── README.md                              # Este arquivo
 
 ```
 
