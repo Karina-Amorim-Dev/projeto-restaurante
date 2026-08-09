@@ -6,6 +6,25 @@
 
 ---
 
+## 🎨 Tela do Aplicativo
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Karina-Amorim-Dev/projeto-restaurante/main/app/src/main/res/drawable/restaurant.png" alt="Tela Principal - Projeto Restaurante" width="350" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+  
+  **Tela Principal com Contador de Ocupação**
+</div>
+
+### Elementos da Interface
+
+A tela principal apresenta:
+- **Imagem de fundo** do restaurante (restaurant.png)
+- **Status atual** em grande destaque ("Pode Entrar" ou "Lotado!")
+- **Contador de pessoas** com número grande e legível (0-10)
+- **Botão "Entrar"** (lado esquerdo) - incrementa o contador
+- **Botão "Sair"** (lado direito) - decrementa o contador
+
+---
+
 ## 📱 Stack Técnico
 
 - **Linguagem:** Kotlin
@@ -31,6 +50,8 @@ projeto-restaurante/
 │   │       ├── java/com/example/restaurante/
 │   │       │   └── MainActivity.kt        # Lógica principal da aplicação
 │   │       ├── res/
+│   │       │   ├── drawable/
+│   │       │   │   └── restaurant.png     # Imagem de fundo
 │   │       │   ├── layout/
 │   │       │   │   └── activity_main.xml  # Interface com botões e contador
 │   │       │   └── values/
@@ -48,12 +69,7 @@ projeto-restaurante/
 
 ### Como funciona
 
-A aplicação é centrada na classe `MainActivity`, que gerencia a interface de usuário e a lógica de negócio. Quando iniciada, exibe uma tela com:
-
-1. **Imagem de fundo** do restaurante
-2. **Status atual** ("Pode Entrar" ou "Lotado!")
-3. **Contador de pessoas** (0-10)
-4. **Dois botões**: "Entrar" para incrementar e "Sair" para decrementar
+A aplicação é centrada na classe `MainActivity`, que gerencia a interface de usuário e a lógica de negócio. Quando iniciada, exibe uma tela com uma imagem de fundo do restaurante e os controles de entrada/saída.
 
 A lógica valida a capacidade máxima: ao atingir 10 pessoas, o status muda para "Lotado!" e o botão "Entrar" deixa de funcionar.
 
@@ -124,7 +140,7 @@ Layout responsivo com ConstraintLayout:
 
 | Elemento | Função |
 |----------|--------|
-| `ImageView` | Background com imagem do restaurante |
+| `ImageView` | Background com imagem do restaurante (restaurant.png) |
 | `textStatus` | Texto dinâmico ("Pode Entrar" / "Lotado!") |
 | `textContador` | Número de pessoas presentes (0-10) |
 | `btnEntrar` | Botão para entrada de pessoa |
@@ -143,6 +159,11 @@ Layout responsivo com ConstraintLayout:
 **Textos com caracteres especiais:**
 - Status: "Pode Entrar" / "Lotado!"
 - Botões: "Entrar" / "Sair"
+
+**Imagem de fundo:**
+- Arquivo: `restaurant.png`
+- Localização: `app/src/main/res/drawable/`
+- Dimensões: Ajustada com `scaleType="centerCrop"`
 
 ---
 
@@ -166,6 +187,7 @@ Layout responsivo com ConstraintLayout:
 5. **Dashboard:** Estatísticas diárias/semanais de ocupação
 6. **Integração:** Conexão com backend para múltiplas filiais
 7. **Ajuste dinâmico:** Permitir mudança da capacidade máxima via admin
+8. **Sensores:** Integração com leitores de cartão ou QR code
 
 ---
 
@@ -175,6 +197,7 @@ Layout responsivo com ConstraintLayout:
 ✅ Validação de capacidade máxima (10 lugares)  
 ✅ Interface intuitiva com 2 botões  
 ✅ Status visual dinâmico  
+✅ Imagem de fundo customizada  
 ✅ Design responsivo (ConstraintLayout)  
 ✅ Compatível com Android 5.0+ (API 24)  
 ✅ Suporte a temas claro/escuro (Material Design 3)
