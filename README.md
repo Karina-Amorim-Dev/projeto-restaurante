@@ -15,20 +15,21 @@
 </div>
 
 **Visualização da interface:**
-- Status: "Pode Entrar" 
-- Contador: 0 pessoas
-- Dois botões: "Entrar" e "Sair"
-- Background: Imagem elegante do restaurante
+- **Status:** "Pode Entrar" em branco e destaque
+- **Contador:** 0 pessoas presentes
+- **Botões:** "Entrar" e "Sair" para controlar ocupação
+- **Background:** Imagem elegante de bar/restaurante com iluminação ambiente
 
 ### Elementos da Interface
 
 A tela principal apresenta:
-- **Imagem de fundo** do restaurante (restaurant.png) com tema de bar/restaurante elegante
+- **Imagem de fundo** do restaurante com design moderno e iluminação em tons quentes
 - **Status atual** em branco, grande e destacado ("Pode Entrar" ou "Lotado!")
 - **Contador de pessoas** com número em branco, gigante e bem legível (0-10)
-- **Botão "Entrar"** (lado esquerdo) - incrementa o contador
-- **Botão "Sair"** (lado direito) - decrementa o contador
+- **Botão "Entrar"** (lado esquerdo) - incrementa o contador de ocupantes
+- **Botão "Sair"** (lado direito) - decrementa o contador de ocupantes
 - **Design responsivo** que se adapta a diferentes tamanhos de tela
+- **Tipografia clara** com contraste branco sobre fundo escuro para máxima legibilidade
 
 ---
 
@@ -222,7 +223,7 @@ Layout responsivo com ConstraintLayout:
 - Arquivo: `restaurant.png`
 - Localização: `app/src/main/res/drawable/`
 - Dimensões: Ajustada com `scaleType="centerCrop"`
-- Tema: Bar/Restaurante elegante com iluminação ambiente
+- Tema: Bar/Restaurante elegante com iluminação ambiente em tons quentes
 
 **Tipografia:**
 - Status: Branco, negrito, tamanho 34sp
