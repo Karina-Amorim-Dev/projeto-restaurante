@@ -9,19 +9,26 @@
 ## 🎨 Tela do Aplicativo
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Karina-Amorim-Dev/projeto-restaurante/main/app/src/main/res/drawable/restaurant.png" alt="Tela Principal - Projeto Restaurante" width="350" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+  <img src="https://imgur.com/placeholder.png" alt="Tela Principal - Projeto Restaurante" width="300" />
   
   **Tela Principal com Contador de Ocupação**
 </div>
 
+**Visualização da interface:**
+- Status: "Pode Entrar" 
+- Contador: 0 pessoas
+- Dois botões: "Entrar" e "Sair"
+- Background: Imagem elegante do restaurante
+
 ### Elementos da Interface
 
 A tela principal apresenta:
-- **Imagem de fundo** do restaurante (restaurant.png)
-- **Status atual** em grande destaque ("Pode Entrar" ou "Lotado!")
-- **Contador de pessoas** com número grande e legível (0-10)
+- **Imagem de fundo** do restaurante (restaurant.png) com tema de bar/restaurante elegante
+- **Status atual** em branco, grande e destacado ("Pode Entrar" ou "Lotado!")
+- **Contador de pessoas** com número em branco, gigante e bem legível (0-10)
 - **Botão "Entrar"** (lado esquerdo) - incrementa o contador
 - **Botão "Sair"** (lado direito) - decrementa o contador
+- **Design responsivo** que se adapta a diferentes tamanhos de tela
 
 ---
 
@@ -110,6 +117,54 @@ Não há variáveis de ambiente ou secrets necessários para este projeto.
 ### MainActivity.kt
 Principal arquivo Kotlin que contém toda a lógica da aplicação:
 
+```kotlin
+package com.example.restaurante
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        var status = findViewById<TextView>(R.id.textStatus)
+        var contador = findViewById<TextView>(R.id.textContador)
+        var btnEntrar = findViewById<Button>(R.id.btnEntrar)
+        var btnSair = findViewById<Button>(R.id.btnSair)
+        
+        btnEntrar.setOnClickListener {
+            var cont = contador.text.toString().toInt()
+            cont++
+            if(cont <= 10) {
+                contador.text = cont.toString()
+            }else{
+                status.text = "Lotado!"
+            }
+        }
+        
+        btnSair.setOnClickListener {
+            var cont = contador.text.toString().toInt()
+            cont--
+            if(cont >=0 && cont <=10){
+                contador.text = cont.toString()
+                status.text = "Pode Entrar"
+            }
+        }
+    }
+}
+```
+
 **Funcionalidades principais:**
 - Inicializa o layout da atividade
 - Captura referências dos widgets (TextViews e Buttons)
@@ -141,10 +196,10 @@ Layout responsivo com ConstraintLayout:
 | Elemento | Função |
 |----------|--------|
 | `ImageView` | Background com imagem do restaurante (restaurant.png) |
-| `textStatus` | Texto dinâmico ("Pode Entrar" / "Lotado!") |
-| `textContador` | Número de pessoas presentes (0-10) |
-| `btnEntrar` | Botão para entrada de pessoa |
-| `btnSair` | Botão para saída de pessoa |
+| `textStatus` | Texto dinâmico ("Pode Entrar" / "Lotado!") em branco, tamanho 34sp |
+| `textContador` | Número de pessoas presentes (0-10) em branco, tamanho 60sp |
+| `btnEntrar` | Botão para entrada de pessoa, posicionado à esquerda |
+| `btnSair` | Botão para saída de pessoa, posicionado à direita |
 
 ---
 
@@ -164,6 +219,12 @@ Layout responsivo com ConstraintLayout:
 - Arquivo: `restaurant.png`
 - Localização: `app/src/main/res/drawable/`
 - Dimensões: Ajustada com `scaleType="centerCrop"`
+- Tema: Bar/Restaurante elegante com iluminação ambiente
+
+**Tipografia:**
+- Status: Branco, negrito, tamanho 34sp
+- Contador: Branco, negrito, tamanho 60sp
+- Botões: Branco, tamanho 20sp, fundo semi-transparente (#A9000000)
 
 ---
 
@@ -188,6 +249,8 @@ Layout responsivo com ConstraintLayout:
 6. **Integração:** Conexão com backend para múltiplas filiais
 7. **Ajuste dinâmico:** Permitir mudança da capacidade máxima via admin
 8. **Sensores:** Integração com leitores de cartão ou QR code
+9. **Temas:** Possibilidade de trocar cores e imagem de fundo
+10. **Sons:** Feedback sonoro ao entrar/sair
 
 ---
 
@@ -200,7 +263,15 @@ Layout responsivo com ConstraintLayout:
 ✅ Imagem de fundo customizada  
 ✅ Design responsivo (ConstraintLayout)  
 ✅ Compatível com Android 5.0+ (API 24)  
-✅ Suporte a temas claro/escuro (Material Design 3)
+✅ Suporte a temas claro/escuro (Material Design 3)  
+✅ Botões com feedback visual  
+✅ Textos em branco com excelente legibilidade
+
+---
+
+## 👨‍💻 Autor
+
+**Karina Amorim**
 
 ---
 
